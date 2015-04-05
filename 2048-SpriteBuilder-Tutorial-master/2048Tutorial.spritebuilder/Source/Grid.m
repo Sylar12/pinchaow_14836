@@ -19,7 +19,7 @@
   NSNull *_noTile;
 }
 
-static const NSInteger GRID_SIZE = 4;
+static const NSInteger GRID_SIZE = 5;
 static const NSInteger START_TILES = 4;
 static const NSInteger WIN_TILE = 2048;
 
@@ -83,8 +83,15 @@ static const NSInteger WIN_TILE = 2048;
         for (id neighbourTile in neighours) {
           if (neighbourTile != _noTile) {
             Tile *neighbour = (Tile *)neighbourTile;
-            if (neighbour.value == tile.value && tile.value != 2 && tile.value != 1) {
-              return YES;
+              //rewrite end condition ~~~
+            if (neighbour.value == tile.value) {
+                if (tile.value != 2 && tile.value != 1) {
+                    return YES;
+                }
+            } else {
+                if (tile.value == 1 && neighbour.value == 2) {
+                    return YES;
+                }
             }
           }
         }
