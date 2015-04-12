@@ -89,7 +89,7 @@ static const NSInteger WIN_TILE = 2048;
                     return YES;
                 }
             } else {
-                if (tile.value == 1 && neighbour.value == 2) {
+                if (tile.value == 1 && neighbour.value == 2 | tile.value == 0) {
                     return YES;
                 }
             }
@@ -171,6 +171,7 @@ static const NSInteger WIN_TILE = 2048;
 
 #pragma mark - Movement
 
+
 - (void)move:(CGPoint)direction {
   // apply negative vector until reaching boundary, this way we get the tile that is the furthest away
 
@@ -239,17 +240,29 @@ static const NSInteger WIN_TILE = 2048;
         NSInteger otherTileY = newY + direction.y;
         Tile *otherTile = _gridArray[otherTileX][otherTileY];
 
+          
+          
         // compare value of other tile and also check if the other thile has been merged this round
-        if (tile.value == otherTile.value && !otherTile.mergedThisRound && tile.value > 2) {
-          // merge tiles
-          [self mergeTileAtIndex:currentX y:currentY withTileAtIndex:otherTileX y:otherTileY];
-          movedTilesThisRound = YES;
-        } else {
-            if (tile.value + otherTile.value == 3) {
-                // merge tiles
-                [self mergeTileAtIndex:currentX y:currentY withTileAtIndex:otherTileX y:otherTileY];
-                movedTilesThisRound = YES;
-            }
+        // Add 0 parameter and "eat" condition here: 0+x=0
+        // Add some condition such as 2+2 or 1+1 can not merge, 1+2 can merge
+          if (tile.value == 0 ) {
+              [self mergeTileAtIndex:currentX y:currentY withTileAtIndex:otherTileX y:otherTileY];
+              movedTilesThisRound = YES;
+          } else {
+              if (tile.value == otherTile.value && !otherTile.mergedThisRound && tile.value > 2) {
+                  // merge tiles
+                  [self mergeTileAtIndex:currentX y:currentY withTileAtIndex:otherTileX y:otherTileY];
+                  movedTilesThisRound = YES;
+              } else {
+                  if (tile.value + otherTile.value == 3 && otherTile.value != 0 ) {
+                      // merge tiles
+                      [self mergeTileAtIndex:currentX y:currentY withTileAtIndex:otherTileX y:otherTileY];
+                      movedTilesThisRound = YES;
+                  }
+          }
+          
+        
+            
           // we cannot merge so we want to perform a move
           performMove = YES;
         }
@@ -281,17 +294,35 @@ static const NSInteger WIN_TILE = 2048;
   }
 }
 
+int imerge = 0;
+
 - (void)mergeTileAtIndex:(NSInteger)x y:(NSInteger)y withTileAtIndex:(NSInteger)xOtherTile y:(NSInteger)yOtherTile {
   Tile *mergedTile = _gridArray[x][y];
   Tile *otherTile = _gridArray[xOtherTile][yOtherTile];
   self.score += mergedTile.value + otherTile.value;
     
     //check different merge condition
-    if (otherTile.value > 2) {
-        otherTile.value *= 2;
+    //When we get 3 for the first timw, cahnge it to 0
+    //Adnd add conditions such as 1+2 = 3; x+x = 2x
+    if (mergedTile.value == 0) {
+        otherTile.value = 0;
     } else {
-        otherTile.value = 3;
+        if (otherTile.value > 2) {
+            otherTile.value *= 2;
+        } else {
+            if (imerge == 0) {
+                otherTile.value = 0;
+                imerge = 1;
+            }
+            else {
+                otherTile.value = 3;
+            }
+        }
     }
+    
+    
+    
+
 
   otherTile.mergedThisRound = YES;
 

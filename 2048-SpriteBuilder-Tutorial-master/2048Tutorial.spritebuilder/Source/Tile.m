@@ -13,6 +13,7 @@
   CCNodeColor *_backgroundNode;
 }
 
+
 - (id)init {
   self = [super init];
 
@@ -22,6 +23,7 @@
 
   return self;
 }
+
 
 - (void)didLoadFromCCB {
   [self updateValueDisplay];
