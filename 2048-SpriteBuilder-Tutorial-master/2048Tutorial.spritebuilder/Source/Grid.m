@@ -302,7 +302,7 @@ int imerge = 0;
   self.score += mergedTile.value + otherTile.value;
     
     //check different merge condition
-    //When we get 3 for the first timw, cahnge it to 0
+    //When we get 3 for the first time, cahnge it to 0
     //Adnd add conditions such as 1+2 = 3; x+x = 2x
     if (mergedTile.value == 0) {
         otherTile.value = 0;

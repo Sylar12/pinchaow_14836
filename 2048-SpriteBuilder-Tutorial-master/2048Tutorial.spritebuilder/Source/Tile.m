@@ -34,7 +34,17 @@
 
   CCColor *backgroundColor = nil;
 
+    
   switch (self.value) {
+      case 0:
+          backgroundColor = [CCColor colorWithRed:169.f/255.f green:169.f/255.f blue:169.f/255.f];
+          break;
+    case 1:
+          backgroundColor = [CCColor colorWithRed:20.f/255.f green:20.f/255.f blue:60.f/255.f];
+          break;
+      case 2:
+          backgroundColor = [CCColor colorWithRed:20.f/255.f green:20.f/255.f blue:60.f/255.f];
+          break;
   case 3:
     backgroundColor = [CCColor colorWithRed:20.f/255.f green:20.f/255.f blue:80.f/255.f];
     break;
