@@ -4,7 +4,20 @@
 <dict>
 	<key>frames</key>
 	<dict>
-		<key>image/image_02.png</key>
+		<key>image/arrow.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 3719}, {200, 130}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {200, 130}}</string>
+			<key>sourceSize</key>
+			<string>{200, 130}</string>
+		</dict>
+		<key>image/background.png</key>
 		<dict>
 			<key>frame</key>
 			<string>{{1, 1}, {1130, 1600}}</string>
@@ -17,13 +30,78 @@
 			<key>sourceSize</key>
 			<string>{1130, 1600}</string>
 		</dict>
+		<key>image/cover.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1133, 1}, {984, 1440}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {984, 1440}}</string>
+			<key>sourceSize</key>
+			<string>{984, 1440}</string>
+		</dict>
+		<key>image/image_02.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 1603}, {1130, 1600}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {1130, 1600}}</string>
+			<key>sourceSize</key>
+			<string>{1130, 1600}</string>
+		</dict>
+		<key>image/merge.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1133, 987}, {1024, 1024}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {1024, 1024}}</string>
+			<key>sourceSize</key>
+			<string>{1024, 1024}</string>
+		</dict>
+		<key>image/plus.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 3205}, {512, 512}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {512, 512}}</string>
+			<key>sourceSize</key>
+			<string>{512, 512}</string>
+		</dict>
+		<key>image/to.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{2575, 1}, {1024, 1024}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {1024, 1024}}</string>
+			<key>sourceSize</key>
+			<string>{1024, 1024}</string>
+		</dict>
 	</dict>
 	<key>metadata</key>
 	<dict>
 		<key>format</key>
 		<integer>2</integer>
 		<key>size</key>
-		<string>{2048, 2048}</string>
+		<string>{4096, 4096}</string>
 		<key>textureFileName</key>
 		<string>image.png</string>
 	</dict>

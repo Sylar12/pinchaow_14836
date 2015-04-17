@@ -33,35 +33,34 @@
   _valueLabel.string = [NSString stringWithFormat:@"%d", self.value];
 
   CCColor *backgroundColor = nil;
-
     
   switch (self.value) {
       case 0:
-          backgroundColor = [CCColor colorWithRed:169.f/255.f green:169.f/255.f blue:169.f/255.f];
+          backgroundColor = [CCColor whiteColor];
           break;
     case 1:
-          backgroundColor = [CCColor colorWithRed:20.f/255.f green:20.f/255.f blue:60.f/255.f];
+          backgroundColor = [CCColor colorWithRed:255.f/255.f green:0.f/255.f blue:0.f/255.f];
           break;
       case 2:
-          backgroundColor = [CCColor colorWithRed:20.f/255.f green:20.f/255.f blue:60.f/255.f];
+          backgroundColor = [CCColor colorWithRed:255.f/255.f green:165.f/255.f blue:0.f/255.f];
           break;
   case 3:
-    backgroundColor = [CCColor colorWithRed:20.f/255.f green:20.f/255.f blue:80.f/255.f];
+          backgroundColor = [CCColor colorWithRed:255.f/255.f green:255.f/255.f blue:0.f/255.f];
     break;
   case 6:
-    backgroundColor = [CCColor colorWithRed:20.f/255.f green:20.f/255.f blue:140.f/255.f];
+    backgroundColor = [CCColor colorWithRed:0.f/255.f green:255.f/255.f blue:0.f/255.f];
     break;
   case 12:
-    backgroundColor = [CCColor colorWithRed:20.f/255.f green:60.f/255.f blue:220.f/255.f];
+    backgroundColor = [CCColor colorWithRed:0.f/255.f green:127.f/255.f blue:255.f/255.f];
     break;
   case 24:
-    backgroundColor = [CCColor colorWithRed:20.f/255.f green:120.f/255.f blue:120.f/255.f];
+    backgroundColor = [CCColor colorWithRed:0.f/255.f green:0.f/255.f blue:255.f/255.f];
     break;
   case 48:
-    backgroundColor = [CCColor colorWithRed:20.f/255.f green:160.f/255.f blue:120.f/255.f];
+    backgroundColor = [CCColor colorWithRed:139.f/255.f green:0.f/255.f blue:255.f/255.f];
     break;
   case 96:
-    backgroundColor = [CCColor colorWithRed:20.f/255.f green:160.f/255.f blue:60.f/255.f];
+    backgroundColor = [CCColor colorWithRed:0.f/255.f green:0.f/255.f blue:0.f/255.f];
     break;
   case 192:
     backgroundColor = [CCColor colorWithRed:50.f/255.f green:160.f/255.f blue:60.f/255.f];
@@ -72,15 +71,15 @@
   case 768:
     backgroundColor = [CCColor colorWithRed:140.f/255.f green:70.f/255.f blue:60.f/255.f];
     break;
-  case 11536:
+  case 1536:
     backgroundColor = [CCColor colorWithRed:170.f/255.f green:30.f/255.f blue:60.f/255.f];
     break;
   case 2372:
     backgroundColor = [CCColor colorWithRed:220.f/255.f green:30.f/255.f blue:30.f/255.f];
     break;
-  default:
-    backgroundColor = [CCColor greenColor];
-    break;
+//  default:
+ //   backgroundColor = [CCColor greenColor];
+  //  break;
   }
 
   _backgroundNode.color = backgroundColor;

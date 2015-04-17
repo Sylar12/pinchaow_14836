@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>frames</key>
+	<dict>
+		<key>gui/game_bkgd.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{643, 1}, {320, 480}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {320, 480}}</string>
+			<key>sourceSize</key>
+			<string>{320, 480}</string>
+		</dict>
+		<key>gui/game_bkgd@2x.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 1}, {640, 960}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {640, 960}}</string>
+			<key>sourceSize</key>
+			<string>{640, 960}</string>
+		</dict>
+		<key>gui/gem_blue.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{276, 963}, {53, 53}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {53, 53}}</string>
+			<key>sourceSize</key>
+			<string>{53, 53}</string>
+		</dict>
+		<key>gui/gem_blue@2x.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{857, 590}, {105, 105}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {105, 105}}</string>
+			<key>sourceSize</key>
+			<string>{105, 105}</string>
+		</dict>
+		<key>gui/gem_green.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{166, 963}, {53, 53}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {53, 53}}</string>
+			<key>sourceSize</key>
+			<string>{53, 53}</string>
+		</dict>
+		<key>gui/gem_green@2x.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{643, 590}, {105, 105}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {105, 105}}</string>
+			<key>sourceSize</key>
+			<string>{105, 105}</string>
+		</dict>
+		<key>gui/gem_pink.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{56, 963}, {53, 53}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {53, 53}}</string>
+			<key>sourceSize</key>
+			<string>{53, 53}</string>
+		</dict>
+		<key>gui/gem_pink@2x.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{750, 590}, {105, 105}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {105, 105}}</string>
+			<key>sourceSize</key>
+			<string>{105, 105}</string>
+		</dict>
+		<key>gui/gem_purple.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{221, 963}, {53, 53}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {53, 53}}</string>
+			<key>sourceSize</key>
+			<string>{53, 53}</string>
+		</dict>
+		<key>gui/gem_purple@2x.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{750, 483}, {105, 105}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {105, 105}}</string>
+			<key>sourceSize</key>
+			<string>{105, 105}</string>
+		</dict>
+		<key>gui/gem_red.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 963}, {53, 53}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {53, 53}}</string>
+			<key>sourceSize</key>
+			<string>{53, 53}</string>
+		</dict>
+		<key>gui/gem_red@2x.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{643, 483}, {105, 105}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {105, 105}}</string>
+			<key>sourceSize</key>
+			<string>{105, 105}</string>
+		</dict>
+		<key>gui/gem_yellow.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{111, 963}, {53, 53}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {53, 53}}</string>
+			<key>sourceSize</key>
+			<string>{53, 53}</string>
+		</dict>
+		<key>gui/gem_yellow@2x.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{857, 483}, {105, 105}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {105, 105}}</string>
+			<key>sourceSize</key>
+			<string>{105, 105}</string>
+		</dict>
+		<key>gui/playerHPBar_bkgd.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{648, 995}, {315, 15}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {315, 15}}</string>
+			<key>sourceSize</key>
+			<string>{315, 15}</string>
+		</dict>
+		<key>gui/playerHPBar_bkgd@2x.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{331, 963}, {630, 30}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {630, 30}}</string>
+			<key>sourceSize</key>
+			<string>{630, 30}</string>
+		</dict>
+		<key>gui/playerHpBar.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{331, 995}, {315, 15}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {315, 15}}</string>
+			<key>sourceSize</key>
+			<string>{315, 15}</string>
+		</dict>
+		<key>gui/playerHpBar@2x.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{965, 1}, {630, 30}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {630, 30}}</string>
+			<key>sourceSize</key>
+			<string>{630, 30}</string>
+		</dict>
+	</dict>
+	<key>metadata</key>
+	<dict>
+		<key>format</key>
+		<integer>2</integer>
+		<key>size</key>
+		<string>{1024, 1024}</string>
+		<key>textureFileName</key>
+		<string>gui.png</string>
+	</dict>
+</dict>
+</plist>

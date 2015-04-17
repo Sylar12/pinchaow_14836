@@ -294,6 +294,7 @@ static const NSInteger WIN_TILE = 2048;
   }
 }
 
+
 int imerge = 0;
 
 - (void)mergeTileAtIndex:(NSInteger)x y:(NSInteger)y withTileAtIndex:(NSInteger)xOtherTile y:(NSInteger)yOtherTile {
@@ -404,7 +405,7 @@ int imerge = 0;
 
     for (int j = 0; j < GRID_SIZE; j++) {
       // iterate through each column in the current row
-      CCNodeColor *backgroundTile = [CCNodeColor nodeWithColor:[CCColor grayColor]];
+      CCNodeColor *backgroundTile = [CCNodeColor nodeWithColor:[CCColor clearColor]];
       backgroundTile.contentSize = CGSizeMake(_columnWidth, _columnHeight);
       backgroundTile.position = ccp(x, y);
       [self addChild:backgroundTile];
