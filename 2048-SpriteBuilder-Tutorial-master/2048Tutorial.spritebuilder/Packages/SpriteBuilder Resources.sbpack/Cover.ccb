@@ -761,7 +761,7 @@
 						<string>Block</string>
 						<key>value</key>
 						<array>
-							<string>play</string>
+							<string>newGame</string>
 							<integer>1</integer>
 						</array>
 					</dict>
@@ -806,7 +806,7 @@
 						<string>String</string>
 						<key>value</key>
 						<array>
-							<string>Title</string>
+							<string>Start</string>
 							<false/>
 						</array>
 					</dict>
@@ -1016,6 +1016,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>
@@ -1088,8 +1090,6 @@
 				</array>
 			</dict>
 		</array>
-		<key>selected</key>
-		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>

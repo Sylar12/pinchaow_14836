@@ -162,11 +162,6 @@
 			<key>tabletScale</key>
 			<integer>1</integer>
 		</dict>
-		<key>gui</key>
-		<dict>
-			<key>isSmartSpriteSheet</key>
-			<true/>
-		</dict>
 		<key>image</key>
 		<dict>
 			<key>isSmartSpriteSheet</key>

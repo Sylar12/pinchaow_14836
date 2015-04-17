@@ -20,8 +20,8 @@
 }
 
 static const NSInteger GRID_SIZE = 5;
-static const NSInteger START_TILES = 4;
-static const NSInteger WIN_TILE = 2048;
+static const NSInteger START_TILES = 5;
+static const NSInteger WIN_TILE = 96;
 
 #pragma mark - View
 
@@ -60,6 +60,21 @@ static const NSInteger WIN_TILE = 2048;
   [[[CCDirector sharedDirector]view]addGestureRecognizer:swipeDown];
 }
 
+- (void) playSoundFXFor:(int) type {
+    OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
+    switch (type) {
+        case 1:
+            [audio playEffect:@"merge.mp3"];
+            break;
+        case 2:
+            [audio playEffect:@"move.mp3"];
+            break;
+        default:
+            NSLog(@"wrong");
+            break;
+    }
+}
+
 #pragma mark - Next Round
 
 - (BOOL)movePossible {
@@ -84,6 +99,7 @@ static const NSInteger WIN_TILE = 2048;
           if (neighbourTile != _noTile) {
             Tile *neighbour = (Tile *)neighbourTile;
               //rewrite end condition ~~~
+              //for 1 2 and 3
             if (neighbour.value == tile.value) {
                 if (tile.value != 2 && tile.value != 1) {
                     return YES;
@@ -101,6 +117,7 @@ static const NSInteger WIN_TILE = 2048;
 
   return NO;
 }
+
 
 - (void)nextRound {
   [self spawnRandomTile];
@@ -212,6 +229,7 @@ static const NSInteger WIN_TILE = 2048;
   // visit column for column
   while ([self indexValid:currentX y:currentY]) {
     while ([self indexValid:currentX y:currentY]) {
+        
       // get tile at current index
       Tile *tile = _gridArray[currentX][currentY];
 
@@ -239,29 +257,30 @@ static const NSInteger WIN_TILE = 2048;
         NSInteger otherTileX = newX + direction.x;
         NSInteger otherTileY = newY + direction.y;
         Tile *otherTile = _gridArray[otherTileX][otherTileY];
-
           
           
         // compare value of other tile and also check if the other thile has been merged this round
         // Add 0 parameter and "eat" condition here: 0+x=0
         // Add some condition such as 2+2 or 1+1 can not merge, 1+2 can merge
+        // Add sound when merge happened
           if (tile.value == 0 ) {
               [self mergeTileAtIndex:currentX y:currentY withTileAtIndex:otherTileX y:otherTileY];
               movedTilesThisRound = YES;
+              [self playSoundFXFor:1];
           } else {
               if (tile.value == otherTile.value && !otherTile.mergedThisRound && tile.value > 2) {
                   // merge tiles
                   [self mergeTileAtIndex:currentX y:currentY withTileAtIndex:otherTileX y:otherTileY];
                   movedTilesThisRound = YES;
+                  [self playSoundFXFor:1];
               } else {
                   if (tile.value + otherTile.value == 3 && otherTile.value != 0 ) {
                       // merge tiles
                       [self mergeTileAtIndex:currentX y:currentY withTileAtIndex:otherTileX y:otherTileY];
                       movedTilesThisRound = YES;
+                      [self playSoundFXFor:1];
                   }
           }
-          
-        
             
           // we cannot merge so we want to perform a move
           performMove = YES;
@@ -321,8 +340,6 @@ int imerge = 0;
         }
     }
     
-    
-    
 
 
   otherTile.mergedThisRound = YES;
@@ -352,6 +369,7 @@ int imerge = 0;
   CGPoint newPosition = [self positionForColumn:newX row:newY];
   CCActionMoveTo *moveTo = [CCActionMoveTo actionWithDuration:0.2f position:newPosition];
   [tile runAction:moveTo];
+    
 }
 
 #pragma mark - Index Utils

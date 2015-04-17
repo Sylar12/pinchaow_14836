@@ -13,7 +13,9 @@
   Grid *_grid;
   CCLabelTTF *_scoreLabel;
   CCLabelTTF *_highscoreLabel;
+    
 }
+
 
 - (void)dealloc {
   [_grid removeObserver:self forKeyPath:@"score"];
@@ -47,6 +49,11 @@
   } else if ([keyPath isEqualToString:@"highscore"]) {
     [self updateHighscore];
   }
+}
+
+- (void)newGame {
+    CCScene *mainScene = [CCBReader loadAsScene:@"MainScene"];
+    [[CCDirector sharedDirector]replaceScene:mainScene];
 }
 
 @end
