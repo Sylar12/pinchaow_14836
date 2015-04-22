@@ -62,21 +62,6 @@
   case 96:
     backgroundColor = [CCColor colorWithRed:0.f/255.f green:0.f/255.f blue:0.f/255.f];
     break;
-  case 192:
-    backgroundColor = [CCColor colorWithRed:50.f/255.f green:160.f/255.f blue:60.f/255.f];
-    break;
-  case 384:
-    backgroundColor = [CCColor colorWithRed:80.f/255.f green:120.f/255.f blue:60.f/255.f];
-    break;
-  case 768:
-    backgroundColor = [CCColor colorWithRed:140.f/255.f green:70.f/255.f blue:60.f/255.f];
-    break;
-  case 1536:
-    backgroundColor = [CCColor colorWithRed:170.f/255.f green:30.f/255.f blue:60.f/255.f];
-    break;
-  case 2372:
-    backgroundColor = [CCColor colorWithRed:220.f/255.f green:30.f/255.f blue:30.f/255.f];
-    break;
 //  default:
  //   backgroundColor = [CCColor greenColor];
   //  break;

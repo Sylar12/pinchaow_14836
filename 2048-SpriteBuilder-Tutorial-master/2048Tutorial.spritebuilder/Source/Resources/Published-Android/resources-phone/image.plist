@@ -121,6 +121,19 @@
 			<key>sourceSize</key>
 			<string>{256, 256}</string>
 		</dict>
+		<key>image/victory.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{855, 131}, {128, 128}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {128, 128}}</string>
+			<key>sourceSize</key>
+			<string>{128, 128}</string>
+		</dict>
 	</dict>
 	<key>metadata</key>
 	<dict>

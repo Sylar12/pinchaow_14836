@@ -17,6 +17,7 @@
   CGFloat _tileMarginHorizontal;
   NSMutableArray *_gridArray;
   NSNull *_noTile;
+    int imerge;
 }
 
 static const NSInteger GRID_SIZE = 5;
@@ -314,7 +315,7 @@ static const NSInteger WIN_TILE = 96;
 }
 
 
-int imerge = 0;
+ imerge = 0;
 
 - (void)mergeTileAtIndex:(NSInteger)x y:(NSInteger)y withTileAtIndex:(NSInteger)xOtherTile y:(NSInteger)yOtherTile {
   Tile *mergedTile = _gridArray[x][y];
