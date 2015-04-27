@@ -12,4 +12,7 @@
 
 @property (nonatomic, assign) NSInteger score;
 
+@property (nonatomic, assign) NSInteger tileValue;
+
+- (void)updateValueDisplay;
 @end

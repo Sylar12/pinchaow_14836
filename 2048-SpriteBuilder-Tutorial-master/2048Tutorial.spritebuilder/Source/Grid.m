@@ -18,6 +18,7 @@
   NSMutableArray *_gridArray;
   NSNull *_noTile;
     int imerge;
+
 }
 
 static const NSInteger GRID_SIZE = 5;
@@ -59,6 +60,7 @@ static const NSInteger WIN_TILE = 96;
   UISwipeGestureRecognizer *swipeDown= [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeDown)];
   swipeDown.direction = UISwipeGestureRecognizerDirectionDown;
   [[[CCDirector sharedDirector]view]addGestureRecognizer:swipeDown];
+    
 }
 
 - (void) playSoundFXFor:(int) type {
@@ -121,17 +123,20 @@ static const NSInteger WIN_TILE = 96;
 
 
 - (void)nextRound {
+
+    int index = 0;
+    
     //two tiles every times
-  [self spawnRandomTile];
-  [self spawnRandomTile];
-
-
+    //fix detect end condition
   for (int i = 0; i < GRID_SIZE; i++) {
     for (int j = 0; j < GRID_SIZE; j++) {
       Tile *tile = _gridArray[i][j];
       if (![tile isEqual:_noTile]) {
         // reset merged flag
         tile.mergedThisRound = NO;
+      } else if(index < 2){
+          [self spawnRandomTile];
+          index +=1;
       }
     }
   }
@@ -141,6 +146,7 @@ static const NSInteger WIN_TILE = 96;
   if (!movePossible) {
     [self loose];
   }
+
 }
 
 #pragma mark - End Conditions
@@ -273,7 +279,7 @@ static const NSInteger WIN_TILE = 96;
               movedTilesThisRound = YES;
               [self playSoundFXFor:1];
           } else {
-              if (tile.value == otherTile.value && !otherTile.mergedThisRound && tile.value > 2) {
+              if (tile.value == otherTile.value && tile.value > 2) {
                   // merge tiles
                   [self mergeTileAtIndex:currentX y:currentY withTileAtIndex:otherTileX y:otherTileY];
                   movedTilesThisRound = YES;
@@ -322,6 +328,7 @@ static const NSInteger WIN_TILE = 96;
  imerge = 0;
 
 - (void)mergeTileAtIndex:(NSInteger)x y:(NSInteger)y withTileAtIndex:(NSInteger)xOtherTile y:(NSInteger)yOtherTile {
+    
   Tile *mergedTile = _gridArray[x][y];
   Tile *otherTile = _gridArray[xOtherTile][yOtherTile];
   self.score += mergedTile.value + otherTile.value;
@@ -332,7 +339,7 @@ static const NSInteger WIN_TILE = 96;
     if (mergedTile.value == 0) {
         otherTile.value = 0;
     } else {
-        if (otherTile.value > 2) {
+        if (mergedTile.value > 2) {
             otherTile.value *= 2;
         } else {
             if (imerge == 0) {
@@ -344,11 +351,32 @@ static const NSInteger WIN_TILE = 96;
             }
         }
     }
+ 
+    int currentMax = 3;
+    
+    for(int x=0; x<GRID_SIZE; x++) {
+        for (int y=0; y<GRID_SIZE; y++) {
+            Tile *tile = _gridArray[x][y];
+           
+            if ([tile isEqual:_noTile]) {
+                // if there is no tile at this index -> skip
+                continue;
+            }
+            else if (tile.value > currentMax) {
+                currentMax = tile.value;
+            }
+            
+        }
+    }
+    
+    self.tileValue = currentMax;
+  
     
 
-
   otherTile.mergedThisRound = YES;
-
+    
+    
+    
   if (otherTile.value == WIN_TILE) {
     [self win];
   }
@@ -490,5 +518,7 @@ static const NSInteger WIN_TILE = 96;
 
   return CGPointMake(x,y);
 }
+
+
 
 @end

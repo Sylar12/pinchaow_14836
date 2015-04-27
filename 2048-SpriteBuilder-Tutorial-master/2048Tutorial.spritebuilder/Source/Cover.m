@@ -15,7 +15,7 @@
     // access audio object
     OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
     // play sound effect
-    [audio playEffect:@"a todo color.mp3"];
+    [audio playEffect:@"a todo color.mp3" loop:YES];
 }
 
 - (void)newGame {
