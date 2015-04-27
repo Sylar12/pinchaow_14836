@@ -121,7 +121,10 @@ static const NSInteger WIN_TILE = 96;
 
 
 - (void)nextRound {
+    //two tiles every times
   [self spawnRandomTile];
+  [self spawnRandomTile];
+
 
   for (int i = 0; i < GRID_SIZE; i++) {
     for (int j = 0; j < GRID_SIZE; j++) {
@@ -248,6 +251,7 @@ static const NSInteger WIN_TILE = 96;
       while ([self indexValidAndUnoccupied:newX+direction.x y:newY+direction.y]) {
         newX += direction.x;
         newY += direction.y;
+          
       }
 
       BOOL performMove = NO;
