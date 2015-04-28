@@ -10,6 +10,7 @@
 
 @interface GameEnd : CCNode
 
+
 - (void)setMessage:(NSString *)message score:(NSInteger)score;
 
 @end

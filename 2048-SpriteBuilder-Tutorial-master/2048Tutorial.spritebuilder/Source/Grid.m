@@ -9,6 +9,9 @@
 #import "Grid.h"
 #import "Tile.h"
 #import "GameEnd.h"
+#import "Cover.h"
+#import "MainScene.h"
+
 
 @implementation Grid {
   CGFloat _columnWidth;
@@ -17,8 +20,8 @@
   CGFloat _tileMarginHorizontal;
   NSMutableArray *_gridArray;
   NSNull *_noTile;
-    int imerge;
-
+    Cover *_cover;
+    MainScene *_mainScene;
 }
 
 static const NSInteger GRID_SIZE = 5;
@@ -61,6 +64,7 @@ static const NSInteger WIN_TILE = 96;
   swipeDown.direction = UISwipeGestureRecognizerDirectionDown;
   [[[CCDirector sharedDirector]view]addGestureRecognizer:swipeDown];
     
+    self.imerge = 0;
 }
 
 - (void) playSoundFXFor:(int) type {
@@ -123,7 +127,7 @@ static const NSInteger WIN_TILE = 96;
 
 
 - (void)nextRound {
-
+    
     int index = 0;
     
     //two tiles every times
@@ -134,9 +138,9 @@ static const NSInteger WIN_TILE = 96;
       if (![tile isEqual:_noTile]) {
         // reset merged flag
         tile.mergedThisRound = NO;
-      } else if(index < 2){
+      } else if(index < 5){
           [self spawnRandomTile];
-          index +=1;
+          index += 1;
       }
     }
   }
@@ -325,7 +329,6 @@ static const NSInteger WIN_TILE = 96;
 }
 
 
- imerge = 0;
 
 - (void)mergeTileAtIndex:(NSInteger)x y:(NSInteger)y withTileAtIndex:(NSInteger)xOtherTile y:(NSInteger)yOtherTile {
     
@@ -336,15 +339,16 @@ static const NSInteger WIN_TILE = 96;
     //check different merge condition
     //When we get 3 for the first time, cahnge it to 0
     //Adnd add conditions such as 1+2 = 3; x+x = 2x
+
     if (mergedTile.value == 0) {
         otherTile.value = 0;
     } else {
         if (mergedTile.value > 2) {
             otherTile.value *= 2;
         } else {
-            if (imerge == 0) {
+            if (self.imerge <= 0) {
                 otherTile.value = 0;
-                imerge = 1;
+                self.imerge += 1;
             }
             else {
                 otherTile.value = 3;
@@ -352,6 +356,8 @@ static const NSInteger WIN_TILE = 96;
         }
     }
  
+    
+    //get status for nextTile
     int currentMax = 3;
     
     for(int x=0; x<GRID_SIZE; x++) {
@@ -370,7 +376,6 @@ static const NSInteger WIN_TILE = 96;
     }
     
     self.tileValue = currentMax;
-  
     
 
   otherTile.mergedThisRound = YES;
@@ -518,7 +523,6 @@ static const NSInteger WIN_TILE = 96;
 
   return CGPointMake(x,y);
 }
-
 
 
 @end

@@ -14,5 +14,8 @@
 
 @property (nonatomic, assign) NSInteger tileValue;
 
+@property (nonatomic, assign) NSInteger imerge;
+
+
 - (void)updateValueDisplay;
 @end

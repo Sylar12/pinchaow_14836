@@ -19,6 +19,7 @@
 }
 
 - (void)newGame {
+    
     [self playMusic];
     
     CCScene *mainScene = [CCBReader loadAsScene:@"MainScene"];

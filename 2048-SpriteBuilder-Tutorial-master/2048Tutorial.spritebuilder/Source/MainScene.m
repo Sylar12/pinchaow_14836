@@ -8,6 +8,7 @@
 
 #import "MainScene.h"
 #import "Grid.h"
+#import "Cover.h"
 
 @implementation MainScene {
   Grid *_grid;
@@ -17,7 +18,7 @@
     CCLabelTTF *_valueLabelNext;
     CCNodeColor *_backgroundNodeNext;
     
-    int temp;
+    Cover *_cover;
 }
 
 
@@ -26,6 +27,8 @@
 }
 
 - (void)didLoadFromCCB {
+    [self updateValueDisplay];
+
   [_grid addObserver:self forKeyPath:@"score" options:0 context:NULL];
 
   [[NSUserDefaults standardUserDefaults]addObserver:self
@@ -35,6 +38,10 @@
 
   // load highscore
   [self updateHighscore];
+    
+    //add step to update nextTile status
+    [self schedule:@selector(step) interval:0.5f];
+    
 }
 
 - (void)updateHighscore {
@@ -56,7 +63,6 @@
   } else if ([keyPath isEqualToString:@"highscore"]) {
     [self updateHighscore];
   }
-    [self updateValueDisplay];
 
 }
 
@@ -65,17 +71,11 @@
     [[CCDirector sharedDirector]replaceScene:mainScene];
 }
 
+
 - (void)updateValueDisplay {
     
     CCColor *backgroundColor = nil;
-/*
-    if (temp >= _grid.tileValue) {
-        _grid.tileValue = temp;
-    }
-    else {
-        temp = _grid.tileValue;
-    }
- */
+
     _valueLabelNext.string = [NSString stringWithFormat:@"%d", _grid.tileValue];
 
     
@@ -113,6 +113,13 @@
     }
     
     _backgroundNodeNext.color = backgroundColor;
+}
+
+
+//used to update status of the nextTile in time
+- (void)step
+{
+    [self updateValueDisplay];
 }
 
 @end

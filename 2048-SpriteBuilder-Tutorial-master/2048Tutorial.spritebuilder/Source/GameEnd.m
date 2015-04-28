@@ -7,10 +7,15 @@
 //
 
 #import "GameEnd.h"
+#import "Cover.h"
+#import "Grid.h"
+
 
 @implementation GameEnd {
   CCLabelTTF *_messageLabel;
   CCLabelTTF *_scoreLabel;
+    Cover *_cover;
+    Grid *_grid;
 }
 
 - (void)newGame {
