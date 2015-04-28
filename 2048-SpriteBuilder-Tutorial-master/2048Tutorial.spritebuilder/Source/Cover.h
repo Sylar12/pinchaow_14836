@@ -10,6 +10,5 @@
 
 @interface Cover : CCSprite
 
-@property (nonatomic, assign) NSInteger eatLimit;
 
 @end

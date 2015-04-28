@@ -65,6 +65,8 @@ static const NSInteger WIN_TILE = 96;
   [[[CCDirector sharedDirector]view]addGestureRecognizer:swipeDown];
     
     self.imerge = 0;
+    self.eraserNum = 1;
+    self.tilesNum = 5;
 }
 
 - (void) playSoundFXFor:(int) type {
@@ -138,7 +140,7 @@ static const NSInteger WIN_TILE = 96;
       if (![tile isEqual:_noTile]) {
         // reset merged flag
         tile.mergedThisRound = NO;
-      } else if(index < 5){
+      } else if(index < self.tilesNum){
           [self spawnRandomTile];
           index += 1;
       }
@@ -346,7 +348,7 @@ static const NSInteger WIN_TILE = 96;
         if (mergedTile.value > 2) {
             otherTile.value *= 2;
         } else {
-            if (self.imerge <= 0) {
+            if (self.imerge < self.eraserNum) {
                 otherTile.value = 0;
                 self.imerge += 1;
             }

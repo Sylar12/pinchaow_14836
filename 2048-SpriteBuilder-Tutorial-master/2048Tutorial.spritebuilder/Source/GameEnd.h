@@ -12,5 +12,6 @@
 
 
 - (void)setMessage:(NSString *)message score:(NSInteger)score;
+-(void) removeFromParentAndCleanup:(BOOL)cleanup;
 
 @end

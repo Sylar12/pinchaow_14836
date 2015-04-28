@@ -25,6 +25,7 @@
     
     CCScene *mainScene = [CCBReader loadAsScene:@"MainScene"];
     [[CCDirector sharedDirector]replaceScene:mainScene];
+
 }
 
 

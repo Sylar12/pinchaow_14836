@@ -32,6 +32,8 @@
 - (void)setMessage:(NSString *)message score:(NSInteger)score {
   _messageLabel.string = message;
   _scoreLabel.string = [NSString stringWithFormat:@"%d", score];
+    
+    //[self removeFromParentAndCleanup:YES];
 }
 
 

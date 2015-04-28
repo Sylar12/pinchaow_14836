@@ -16,6 +16,10 @@
 
 @property (nonatomic, assign) NSInteger imerge;
 
+@property (nonatomic, assign) NSInteger eraserNum;
+
+@property (nonatomic, assign) NSInteger tilesNum;
+
 
 - (void)updateValueDisplay;
 @end
