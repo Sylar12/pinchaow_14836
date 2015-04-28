@@ -10,17 +10,18 @@
 
 @implementation Cover
 
-
+/*
 - playMusic {
     // access audio object
     OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
     // play sound effect
     [audio playEffect:@"a todo color.mp3" loop:YES];
 }
+ */
 
 - (void)newGame {
     
-    [self playMusic];
+//    [self playMusic];
     
     CCScene *mainScene = [CCBReader loadAsScene:@"MainScene"];
     [[CCDirector sharedDirector]replaceScene:mainScene];

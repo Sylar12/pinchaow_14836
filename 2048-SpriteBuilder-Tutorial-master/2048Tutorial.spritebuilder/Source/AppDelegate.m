@@ -59,7 +59,15 @@
 
 - (CCScene *)startScene {
     
+    [self playMusic];
   return [CCBReader loadAsScene:@"Cover"];
+}
+
+- playMusic {
+    // access audio object
+    OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
+    // play sound effect
+    [audio playEffect:@"a todo color.mp3" loop:YES];
 }
 
 @end
