@@ -8,6 +8,8 @@
 
 #import "CCNode.h"
 
+extern BOOL *newHighScore;
+
 @interface GameEnd : CCNode
 
 

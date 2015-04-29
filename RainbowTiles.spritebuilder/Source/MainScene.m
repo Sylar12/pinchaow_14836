@@ -119,7 +119,7 @@
     [self updateValueDisplay];
 }
 
-- (void)back {
+- (void)main {
     CCScene *cover = [CCBReader loadAsScene:@"Cover"];
     [[CCDirector sharedDirector]replaceScene:cover];
 }

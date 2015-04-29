@@ -9,6 +9,9 @@
 #import "CCNodeColor.h"
 
 extern BOOL *continueTemp;
+extern int *eraserNum;
+extern BOOL *newHighScore;
+
 
 @interface Grid : CCNodeColor
 

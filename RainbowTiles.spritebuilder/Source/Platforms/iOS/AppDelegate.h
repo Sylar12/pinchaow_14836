@@ -27,6 +27,8 @@
 #import "cocos2d.h"
 
 BOOL *continueTemp;
+int *eraserNum;
+BOOL *newHighScore;
 
 @interface AppController : CCAppDelegate
 {

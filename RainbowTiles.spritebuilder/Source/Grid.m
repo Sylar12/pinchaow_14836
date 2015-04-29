@@ -71,7 +71,6 @@ static const NSInteger WIN_TILE = 12;
     [[[CCDirector sharedDirector]view]addGestureRecognizer:swipeDown];
     
     self.imerge = 0;
-    self.eraserNum = 1;
     self.tilesNum = 6;
     
     continueTemp = false;
@@ -119,7 +118,7 @@ static const NSInteger WIN_TILE = 12;
                         //rewrite end condition ~~~
                         //for 1 2 and 3
                         if (neighbour.value == tile.value) {
-                            if (tile.value != 2 && tile.value != 1) {
+                            if (tile.value != 2 && tile.value != 1 && tile.value != 0) {
                                 return YES;
                             }
                         } else {
@@ -180,6 +179,7 @@ static const NSInteger WIN_TILE = 12;
     if (self.score > [highScore intValue]) {
         // new highscore!
         highScore = [NSNumber numberWithInt:self.score];
+
         [[NSUserDefaults standardUserDefaults]setObject:highScore forKey:@"highscore"];
         [[NSUserDefaults standardUserDefaults]synchronize];
     }
@@ -199,18 +199,43 @@ static const NSInteger WIN_TILE = 12;
     if (self.score > [highScore intValue]) {
         // new highscore!
         highScore = [NSNumber numberWithInt:self.score];
+
         [[NSUserDefaults standardUserDefaults]setObject:highScore forKey:@"highscore"];
         [[NSUserDefaults standardUserDefaults]synchronize];
     }
 }
 
-
+//add some new show up results for different end conditions
 - (void)win {
-    [self endGameWithMessageWin:@"You win!"];
+    NSNumber *highScore = [[NSUserDefaults standardUserDefaults]objectForKey:@"highscore"];
+    if (self.score > [highScore intValue]) {
+        [self endGameWithMessageWin:@"You win! New Highscore!"];
+    }
+    else {
+        [self endGameWithMessageWin:@"You win!"];
+    }
 }
 
 - (void)loose {
-    [self endGameWithMessage:@"You loose!"];
+    NSNumber *highScore = [[NSUserDefaults standardUserDefaults]objectForKey:@"highscore"];
+    if (continueTemp == false) {
+        if (self.score > [highScore intValue]) {
+            [self endGameWithMessage:@"You loose! New Highscore!"];
+        }
+        else {
+            [self endGameWithMessage:@"You loose!"];
+        }
+    } else {
+        if (self.score > [highScore intValue]) {
+            [self endGameWithMessage:@"New Highscore! But end." ];
+        }
+        else {
+            [self endGameWithMessage:@"You win! But end."];
+        }
+    }
+    
+    
+
 }
 
 #pragma mark - Touch Handling
@@ -310,9 +335,14 @@ static const NSInteger WIN_TILE = 12;
                 // Add some condition such as 2+2 or 1+1 can not merge, 1+2 can merge
                 // Add sound when merge happened
                 if (tile.value == 0 ) {
-                    [self mergeTileAtIndex:currentX y:currentY withTileAtIndex:otherTileX y:otherTileY];
-                    movedTilesThisRound = YES;
-                    [self playSoundFXFor:1];
+                    
+                    //multiple eraser tiles, nothing will happen between two eraser tiles
+                    if (otherTile.value != 0) {
+                        [self mergeTileAtIndex:currentX y:currentY withTileAtIndex:otherTileX y:otherTileY];
+                        movedTilesThisRound = YES;
+                        [self playSoundFXFor:1];
+                    }
+                    
                 } else {
                     if (tile.value == otherTile.value && tile.value > 2) {
                         // merge tiles
@@ -384,7 +414,7 @@ static const NSInteger WIN_TILE = 12;
         if (mergedTile.value > 2) {
             otherTile.value *= 2;
         } else {
-            if (self.imerge < self.eraserNum) {
+            if (self.imerge < eraserNum) {
                 otherTile.value = 0;
                 self.imerge += 1;
             }

@@ -8,6 +8,8 @@
 
 #import "CCNode.h"
 
+extern int *eraserNum;
+
 @interface Cover : CCNode
 
 @end

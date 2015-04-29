@@ -11,25 +11,29 @@
 
 @implementation Cover
 
-/*
- - playMusic {
- // access audio object
- OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
- // play sound effect
- [audio playEffect:@"a todo color.mp3" loop:YES];
- }
- */
 
-- (void)newGame {
-    
-    //    [self playMusic];
+- (void)normal {
     
     CCScene *mainScene = [CCBReader loadAsScene:@"MainScene"];
     [[CCDirector sharedDirector]replaceScene:mainScene];
-    
+    eraserNum = 1;
 }
 
+- (void)hard {
+    
+    CCScene *mainScene = [CCBReader loadAsScene:@"MainScene"];
+    [[CCDirector sharedDirector]replaceScene:mainScene];
+    eraserNum = 2;
 
+}
+
+- (void)crazy {
+    
+    CCScene *mainScene = [CCBReader loadAsScene:@"MainScene"];
+    [[CCDirector sharedDirector]replaceScene:mainScene];
+    eraserNum = 3;
+
+}
 
 
 @end

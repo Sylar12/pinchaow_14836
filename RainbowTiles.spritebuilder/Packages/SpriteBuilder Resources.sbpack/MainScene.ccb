@@ -2389,8 +2389,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>0.69999998807907104</real>
-							<real>0.69999998807907104</real>
+							<real>1</real>
+							<real>0.80000001192092896</real>
 							<false/>
 							<integer>0</integer>
 						</array>
@@ -2459,7 +2459,28 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonNormal.png</string>
+							<string>ccbResources/ccbParticleSmoke.png</string>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>backgroundOpacity|Normal</string>
+						<key>type</key>
+						<string>Float</string>
+						<key>value</key>
+						<real>0.60000002384185791</real>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>backgroundColor|Normal</string>
+						<key>type</key>
+						<string>Color3</string>
+						<key>value</key>
+						<array>
+							<real>1</real>
+							<real>0.0</real>
+							<real>0.0</real>
+							<real>1</real>
 						</array>
 					</dict>
 					<dict>
@@ -2470,7 +2491,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonHighlighted.png</string>
+							<string>ccbResources/ccbParticleFire.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -2530,7 +2551,7 @@
 						<key>type</key>
 						<string>FontTTF</string>
 						<key>value</key>
-						<string>Helvetica</string>
+						<string>AmericanTypewriter</string>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -2588,10 +2609,10 @@
 						<string>Color4</string>
 						<key>value</key>
 						<array>
-							<real>255</real>
-							<real>255</real>
-							<real>255</real>
-							<real>255</real>
+							<real>0.0</real>
+							<real>1</real>
+							<real>0.0</real>
+							<real>1</real>
 						</array>
 					</dict>
 					<dict>
@@ -2626,9 +2647,9 @@
 						<key>value</key>
 						<array>
 							<real>0.0</real>
+							<real>1</real>
 							<real>0.0</real>
-							<real>0.0</real>
-							<real>127</real>
+							<real>1</real>
 						</array>
 					</dict>
 					<dict>
@@ -2657,6 +2678,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -3225,7 +3248,7 @@
 						<key>value</key>
 						<array>
 							<real>268.42803955078125</real>
-							<real>132.04226684570312</real>
+							<real>126.45277404785156</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -3249,8 +3272,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>0.89999997615814209</real>
-							<real>0.69999998807907104</real>
+							<real>1</real>
+							<real>0.80000001192092896</real>
 							<false/>
 							<integer>0</integer>
 						</array>
@@ -3262,7 +3285,7 @@
 						<string>Block</string>
 						<key>value</key>
 						<array>
-							<string>back</string>
+							<string>main</string>
 							<integer>1</integer>
 						</array>
 					</dict>
@@ -3307,7 +3330,7 @@
 						<string>String</string>
 						<key>value</key>
 						<array>
-							<string>Back       </string>
+							<string>Main       </string>
 							<false/>
 						</array>
 					</dict>
@@ -3319,7 +3342,28 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonNormal.png</string>
+							<string>ccbResources/ccbParticleSmoke.png</string>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>backgroundOpacity|Normal</string>
+						<key>type</key>
+						<string>Float</string>
+						<key>value</key>
+						<real>0.60000002384185791</real>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>backgroundColor|Normal</string>
+						<key>type</key>
+						<string>Color3</string>
+						<key>value</key>
+						<array>
+							<real>0.0</real>
+							<real>1</real>
+							<real>0.0</real>
+							<real>1</real>
 						</array>
 					</dict>
 					<dict>
@@ -3330,7 +3374,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonHighlighted.png</string>
+							<string>ccbResources/ccbParticleFire.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -3390,7 +3434,7 @@
 						<key>type</key>
 						<string>FontTTF</string>
 						<key>value</key>
-						<string>Helvetica</string>
+						<string>AmericanTypewriter</string>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -3448,10 +3492,10 @@
 						<string>Color4</string>
 						<key>value</key>
 						<array>
-							<real>255</real>
-							<real>255</real>
-							<real>255</real>
-							<real>255</real>
+							<real>1</real>
+							<real>0.0</real>
+							<real>0.0</real>
+							<real>1</real>
 						</array>
 					</dict>
 					<dict>
@@ -3485,10 +3529,10 @@
 						<string>Color4</string>
 						<key>value</key>
 						<array>
+							<real>1</real>
 							<real>0.0</real>
 							<real>0.0</real>
-							<real>0.0</real>
-							<real>127</real>
+							<real>1</real>
 						</array>
 					</dict>
 					<dict>
