@@ -11,6 +11,7 @@
 		6212505718F3750C00F986DC /* Tile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6212505618F3750C00F986DC /* Tile.m */; };
 		6212505A18F9474A00F986DC /* GameEnd.m in Sources */ = {isa = PBXBuildFile; fileRef = 6212505918F9474A00F986DC /* GameEnd.m */; };
 		62366236195B853400ECB220 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62366235195B853400ECB220 /* GLKit.framework */; };
+		AF5F8BB21AF03F8C002C1FC9 /* GameEndWin.m in Sources */ = {isa = PBXBuildFile; fileRef = AF5F8BB11AF03F8C002C1FC9 /* GameEndWin.m */; };
 		AF60B0E81AEF489D00C1EE17 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF60B0E41AEF489D00C1EE17 /* Bolts.framework */; };
 		AF60B0E91AEF489D00C1EE17 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF60B0E51AEF489D00C1EE17 /* FBSDKCoreKit.framework */; };
 		AF60B0EA1AEF489D00C1EE17 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF60B0E61AEF489D00C1EE17 /* FBSDKLoginKit.framework */; };
@@ -86,6 +87,8 @@
 		6212505818F9474A00F986DC /* GameEnd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameEnd.h; path = Source/GameEnd.h; sourceTree = "<group>"; };
 		6212505918F9474A00F986DC /* GameEnd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameEnd.m; path = Source/GameEnd.m; sourceTree = "<group>"; };
 		62366235195B853400ECB220 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		AF5F8BB01AF03F8C002C1FC9 /* GameEndWin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameEndWin.h; path = Source/GameEndWin.h; sourceTree = "<group>"; };
+		AF5F8BB11AF03F8C002C1FC9 /* GameEndWin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameEndWin.m; path = Source/GameEndWin.m; sourceTree = "<group>"; };
 		AF60B0E41AEF489D00C1EE17 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		AF60B0E51AEF489D00C1EE17 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		AF60B0E61AEF489D00C1EE17 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -165,6 +168,8 @@
 		B737893C1807616C0076A88C /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				AF5F8BB01AF03F8C002C1FC9 /* GameEndWin.h */,
+				AF5F8BB11AF03F8C002C1FC9 /* GameEndWin.m */,
 				B737893D1807617C0076A88C /* AppDelegate.h */,
 				B737893E1807617C0076A88C /* AppDelegate.m */,
 				AF9FA2AD1AE1B48400E6D900 /* Cover.h */,
@@ -398,6 +403,7 @@
 				B7378994180767190076A88C /* MainScene.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 				6212505318F374E500F986DC /* Grid.m in Sources */,
+				AF5F8BB21AF03F8C002C1FC9 /* GameEndWin.m in Sources */,
 				6212505A18F9474A00F986DC /* GameEnd.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

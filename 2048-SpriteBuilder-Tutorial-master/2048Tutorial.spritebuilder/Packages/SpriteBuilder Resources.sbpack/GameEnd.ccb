@@ -788,7 +788,7 @@
 						<string>String</string>
 						<key>value</key>
 						<array>
-							<string>Again!</string>
+							<string>Again</string>
 							<false/>
 						</array>
 					</dict>
@@ -1114,7 +1114,7 @@
 						<string>String</string>
 						<key>value</key>
 						<array>
-							<string>Share!</string>
+							<string>Share</string>
 							<false/>
 						</array>
 					</dict>
@@ -1324,8 +1324,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>
@@ -1398,6 +1396,8 @@
 				</array>
 			</dict>
 		</array>
+		<key>selected</key>
+		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>

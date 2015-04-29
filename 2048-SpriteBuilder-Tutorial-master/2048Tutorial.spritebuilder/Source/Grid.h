@@ -20,6 +20,8 @@
 
 @property (nonatomic, assign) NSInteger tilesNum;
 
+@property (nonatomic, assign) BOOL continueTemp;
+
 
 - (void)updateValueDisplay;
 @end

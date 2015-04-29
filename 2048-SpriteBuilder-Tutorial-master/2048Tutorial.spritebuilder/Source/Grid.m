@@ -11,6 +11,8 @@
 #import "GameEnd.h"
 #import "Cover.h"
 #import "MainScene.h"
+#import "GameEndwin.h"
+
 
 
 @implementation Grid {
@@ -66,7 +68,7 @@ static const NSInteger WIN_TILE = 96;
     
     self.imerge = 0;
     self.eraserNum = 1;
-    self.tilesNum = 5;
+    self.tilesNum = 2;
 }
 
 - (void) playSoundFXFor:(int) type {
@@ -174,6 +176,25 @@ static const NSInteger WIN_TILE = 96;
     [[NSUserDefaults standardUserDefaults]setObject:highScore forKey:@"highscore"];
     [[NSUserDefaults standardUserDefaults]synchronize];
   }
+}
+
+- (void)endGameWithMessageWin:(NSString *)message {
+    GameEndWin *gameEndPopover = (GameEndWin *)[CCBReader load:@"GameEndWin"];
+    gameEndPopover.positionType = CCPositionTypeNormalized;
+    gameEndPopover.position = ccp(0.5, 0.5);
+    gameEndPopover.zOrder = INT_MAX;
+    
+    [gameEndPopover setMessage:message score:self.score];
+    
+    [self addChild:gameEndPopover];
+    
+    NSNumber *highScore = [[NSUserDefaults standardUserDefaults]objectForKey:@"highscore"];
+    if (self.score > [highScore intValue]) {
+        // new highscore!
+        highScore = [NSNumber numberWithInt:self.score];
+        [[NSUserDefaults standardUserDefaults]setObject:highScore forKey:@"highscore"];
+        [[NSUserDefaults standardUserDefaults]synchronize];
+    }
 }
 
 - (void)win {
@@ -336,7 +357,14 @@ static const NSInteger WIN_TILE = 96;
     
   Tile *mergedTile = _gridArray[x][y];
   Tile *otherTile = _gridArray[xOtherTile][yOtherTile];
-  self.score += mergedTile.value + otherTile.value;
+    
+    // set score mechanisms + or -
+    if (mergedTile.value == 0) {
+        self.score -= mergedTile.value + otherTile.value;
+    }
+    else {
+        self.score += mergedTile.value + otherTile.value;
+    }
     
     //check different merge condition
     //When we get 3 for the first time, cahnge it to 0
