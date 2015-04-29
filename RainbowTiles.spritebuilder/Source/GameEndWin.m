@@ -1,5 +1,5 @@
 //
-//  GameEnd.m
+//  GameEndWin.m
 //  RainbowTiles
 //
 //  Created by PinchaoWang on 15/4/28.
@@ -11,12 +11,12 @@
 #import <FBSDKShareKit/FBSDKShareKit.h>
 
 
-#import "GameEnd.h"
+#import "GameEndWin.h"
 #import "Cover.h"
 #import "Grid.h"
 
 
-@implementation GameEnd {
+@implementation GameEndWin {
     CCLabelTTF *_messageLabel;
     CCLabelTTF *_scoreLabel;
     Cover *_cover;
@@ -27,9 +27,13 @@
     CCScene *mainScene = [CCBReader loadAsScene:@"MainScene"];
     [[CCDirector sharedDirector]replaceScene:mainScene];
     
-    //[self removeFromParentAndCleanup:YES];
-
 }
+
+- (void)continueTemp {
+    [self removeFromParentAndCleanup:YES];
+    continueTemp = true;
+}
+
 
 
 - (void)setMessage:(NSString *)message score:(NSInteger)score {

@@ -12,6 +12,8 @@
 #import "GameEnd.h"
 #import "Cover.h"
 #import "MainScene.h"
+#import "GameEndWin.h"
+
 
 
 
@@ -28,7 +30,9 @@
 
 static const NSInteger GRID_SIZE = 5;
 static const NSInteger START_TILES = 5;
-static const NSInteger WIN_TILE = 96;
+static const NSInteger WIN_TILE = 12;
+
+
 
 #pragma mark - View
 
@@ -69,6 +73,9 @@ static const NSInteger WIN_TILE = 96;
     self.imerge = 0;
     self.eraserNum = 1;
     self.tilesNum = 6;
+    
+    continueTemp = false;
+
 }
 
 - (void) playSoundFXFor:(int) type {
@@ -178,9 +185,28 @@ static const NSInteger WIN_TILE = 96;
     }
 }
 
+- (void)endGameWithMessageWin:(NSString *)message {
+    GameEndWin *gameEndPopover = (GameEndWin *)[CCBReader load:@"GameEndWin"];
+    gameEndPopover.positionType = CCPositionTypeNormalized;
+    gameEndPopover.position = ccp(0.5, 0.5);
+    gameEndPopover.zOrder = INT_MAX;
+    
+    [gameEndPopover setMessage:message score:self.score];
+    
+    [self addChild:gameEndPopover];
+    
+    NSNumber *highScore = [[NSUserDefaults standardUserDefaults]objectForKey:@"highscore"];
+    if (self.score > [highScore intValue]) {
+        // new highscore!
+        highScore = [NSNumber numberWithInt:self.score];
+        [[NSUserDefaults standardUserDefaults]setObject:highScore forKey:@"highscore"];
+        [[NSUserDefaults standardUserDefaults]synchronize];
+    }
+}
+
 
 - (void)win {
-    [self endGameWithMessage:@"You win!"];
+    [self endGameWithMessageWin:@"You win!"];
 }
 
 - (void)loose {
@@ -395,7 +421,10 @@ static const NSInteger WIN_TILE = 96;
     
     
     if (otherTile.value == WIN_TILE) {
-        [self win];
+        if (continueTemp == false) {
+            [self win];
+        }
+        
     }
     
     _gridArray[x][y] = _noTile;

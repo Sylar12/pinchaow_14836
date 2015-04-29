@@ -71,6 +71,7 @@
 		AF5F8BDF1AF0891F002C1FC9 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF5F8BDC1AF0891F002C1FC9 /* FBSDKCoreKit.framework */; };
 		AF5F8BE01AF0891F002C1FC9 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF5F8BDD1AF0891F002C1FC9 /* FBSDKLoginKit.framework */; };
 		AF5F8BE11AF0891F002C1FC9 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF5F8BDE1AF0891F002C1FC9 /* FBSDKShareKit.framework */; };
+		AFE9708D1AF0A610000E0EA2 /* GameEndWin.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE9708C1AF0A610000E0EA2 /* GameEndWin.m */; };
 		B71F5911188484E7003F4D28 /* iPad-old.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5907188484E7003F4D28 /* iPad-old.png */; };
 		B71F5912188484E7003F4D28 /* iPad-old@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5908188484E7003F4D28 /* iPad-old@2x.png */; };
 		B71F5913188484E7003F4D28 /* iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5909188484E7003F4D28 /* iPad.png */; };
@@ -186,6 +187,8 @@
 		AF5F8BDC1AF0891F002C1FC9 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		AF5F8BDD1AF0891F002C1FC9 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		AF5F8BDE1AF0891F002C1FC9 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		AFE9708B1AF0A610000E0EA2 /* GameEndWin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameEndWin.h; path = Source/GameEndWin.h; sourceTree = "<group>"; };
+		AFE9708C1AF0A610000E0EA2 /* GameEndWin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameEndWin.m; path = Source/GameEndWin.m; sourceTree = "<group>"; };
 		B71F5907188484E7003F4D28 /* iPad-old.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old.png"; path = "Icons/iPad-old.png"; sourceTree = "<group>"; };
 		B71F5908188484E7003F4D28 /* iPad-old@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old@2x.png"; path = "Icons/iPad-old@2x.png"; sourceTree = "<group>"; };
 		B71F5909188484E7003F4D28 /* iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iPad.png; path = Icons/iPad.png; sourceTree = "<group>"; };
@@ -457,6 +460,8 @@
 				AF5F8BC01AF0654C002C1FC9 /* Grid.h */,
 				AF5F8BC11AF0654C002C1FC9 /* Grid.m */,
 				AF5F8BC31AF065C0002C1FC9 /* GameEnd.h */,
+				AFE9708B1AF0A610000E0EA2 /* GameEndWin.h */,
+				AFE9708C1AF0A610000E0EA2 /* GameEndWin.m */,
 				AF5F8BC41AF065C0002C1FC9 /* GameEnd.m */,
 				AF5F8BC61AF06611002C1FC9 /* Cover.h */,
 				AF5F8BC71AF06611002C1FC9 /* Cover.m */,
@@ -843,6 +848,7 @@
 				7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
 				AF5F8BBF1AF064BB002C1FC9 /* Tile.m in Sources */,
+				AFE9708D1AF0A610000E0EA2 /* GameEndWin.m in Sources */,
 				AF5F8BC51AF065C0002C1FC9 /* GameEnd.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,5 +1,5 @@
 //
-//  GameEnd.h
+//  GameEndWin.h
 //  RainbowTiles
 //
 //  Created by PinchaoWang on 15/4/28.
@@ -8,10 +8,10 @@
 
 #import "CCNode.h"
 
-@interface GameEnd : CCNode
+extern BOOL *continueTemp;
 
-
+@interface GameEndWin : CCNode
 - (void)setMessage:(NSString *)message score:(NSInteger)score;
-- (void)removeFromParentAndCleanup:(BOOL)cleanup;
+-(void) removeFromParentAndCleanup:(BOOL)cleanup;
 
 @end

@@ -26,8 +26,9 @@
 #import <UIKit/UIKit.h>
 #import "cocos2d.h"
 
+BOOL *continueTemp;
+
 @interface AppController : CCAppDelegate
 {
 }
-
 @end

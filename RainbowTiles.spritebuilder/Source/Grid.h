@@ -8,6 +8,8 @@
 
 #import "CCNodeColor.h"
 
+extern BOOL *continueTemp;
+
 @interface Grid : CCNodeColor
 
 @property (nonatomic, assign) NSInteger score;
@@ -20,8 +22,10 @@
 
 @property (nonatomic, assign) NSInteger tilesNum;
 
-@property (nonatomic, assign) BOOL continueTemp;
+//default value is false
+//@property (nonatomic, assign) BOOL continueTemp;
 
 
 - (void)updateValueDisplay;
+
 @end
