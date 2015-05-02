@@ -3,6 +3,10 @@
 #import "MainScene.h"
 #import "Grid.h"
 #import "Cover.h"
+#import "Tutorial.h"
+#import "TutorialAgain.h"
+
+
 
 @implementation MainScene {
     Grid *_grid;
@@ -13,6 +17,9 @@
     CCNodeColor *_backgroundNodeNext;
     
     Cover *_cover;
+    CCNode *_tutorial;
+    CCNode *_tutorialAgain;
+
 }
 
 
@@ -40,6 +47,7 @@
     
     self.level = 2;
     highScoreUpdate = false;
+    
     
 }
 
@@ -128,6 +136,17 @@
         highScoreUpdate = false;
     }
     
+    //
+    if (firstTime == true) {
+        [self loadToturial];
+        firstTime = false;
+    }
+    
+    if (secondTime == true) {
+        [self loadToturialAgain];
+        secondTime = false;
+    }
+    
     
 }
 
@@ -146,6 +165,24 @@
     
     [self updateHighscore];
     
+}
+
+- (void) loadToturial {
+    Tutorial *gameEndPopover = (Tutorial *)[CCBReader load:@"Tutorial"];
+    gameEndPopover.positionType = CCPositionTypeNormalized;
+    gameEndPopover.position = ccp(0.5, 0.5);
+    gameEndPopover.zOrder = INT_MAX;
+    
+    [self addChild:gameEndPopover];
+}
+
+- (void) loadToturialAgain {
+    TutorialAgain *gameEndPopover = (TutorialAgain *)[CCBReader load:@"TutorialAgain"];
+    gameEndPopover.positionType = CCPositionTypeNormalized;
+    gameEndPopover.position = ccp(0.5, 0.5);
+    gameEndPopover.zOrder = INT_MAX;
+    
+    [self addChild:gameEndPopover];
 }
 
 

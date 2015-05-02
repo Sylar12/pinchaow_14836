@@ -63,6 +63,9 @@
 - (CCScene*) startScene
 {
   //  [self playMusic];
+    
+    firstTime = true;
+    secondTime = false;
     return [CCBReader loadAsScene:@"Cover"];
 }
 
@@ -74,6 +77,7 @@
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
+        [super applicationDidBecomeActive:application];
     [FBSDKAppEvents activateApp];
 }
 

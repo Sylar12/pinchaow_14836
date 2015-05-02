@@ -71,7 +71,7 @@ static const NSInteger WIN_TILE = 12;
     [[[CCDirector sharedDirector]view]addGestureRecognizer:swipeDown];
     
     self.imerge = 0;
-    self.tilesNum = 6;
+    self.tilesNum = 2;
     
     continueTemp = false;
     

@@ -30,6 +30,8 @@ BOOL *continueTemp;
 int *eraserNum;
 BOOL *newHighScore;
 BOOL *highScoreUpdate;
+BOOL *firstTime;
+BOOL *secondTime;
 
 
 @interface AppController : CCAppDelegate

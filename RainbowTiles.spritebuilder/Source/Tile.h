@@ -8,6 +8,8 @@
 
 #import "CCNode.h"
 
+
+
 @interface Tile : CCNode
 
 @property (nonatomic, assign) NSInteger value;
