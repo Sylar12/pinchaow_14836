@@ -62,7 +62,7 @@
 
 - (CCScene*) startScene
 {
-  //  [self playMusic];
+    [self playMusic];
     
     firstTime = true;
     secondTime = false;
