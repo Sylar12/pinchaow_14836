@@ -29,6 +29,8 @@
 BOOL *continueTemp;
 int *eraserNum;
 BOOL *newHighScore;
+BOOL *highScoreUpdate;
+
 
 @interface AppController : CCAppDelegate
 {

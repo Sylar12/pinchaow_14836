@@ -11,6 +11,8 @@
 extern BOOL *continueTemp;
 extern int *eraserNum;
 extern BOOL *newHighScore;
+extern BOOL *highScoreUpdate;
+
 
 
 @interface Grid : CCNodeColor
@@ -24,6 +26,9 @@ extern BOOL *newHighScore;
 @property (nonatomic, assign) NSInteger eraserNum;
 
 @property (nonatomic, assign) NSInteger tilesNum;
+
+@property (nonatomic, assign) NSInteger oldHighScoreInt;
+
 
 //default value is false
 //@property (nonatomic, assign) BOOL continueTemp;

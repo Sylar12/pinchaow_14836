@@ -68,7 +68,7 @@ static const NSInteger WIN_TILE = 96;
     
     self.imerge = 0;
     self.eraserNum = 1;
-    self.tilesNum = 2;
+    self.tilesNum = 6;
 }
 
 - (void) playSoundFXFor:(int) type {

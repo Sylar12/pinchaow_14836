@@ -25,7 +25,14 @@
     
     CCScene *mainScene = [CCBReader loadAsScene:@"MainScene"];
     [[CCDirector sharedDirector]replaceScene:mainScene];
-
+    
+    /*
+    NSNumber *highScore;
+    NSInteger new = 0;
+    highScore = [NSNumber numberWithInt:new];
+    
+    [[NSUserDefaults standardUserDefaults]setObject:highScore forKey:@"highscore"];
+*/
 }
 
 

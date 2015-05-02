@@ -25,10 +25,12 @@
     
     [_grid addObserver:self forKeyPath:@"score" options:0 context:NULL];
     
+    /*
     [[NSUserDefaults standardUserDefaults]addObserver:self
                                            forKeyPath:@"highscore"
                                               options:0
                                               context:NULL];
+     */
     
     // load highscore
     [self updateHighscore];
@@ -37,6 +39,7 @@
     [self schedule:@selector(step) interval:0.5f];
     
     self.level = 2;
+    highScoreUpdate = false;
     
 }
 
@@ -66,7 +69,7 @@
 - (void)newGame {
     CCScene *mainScene = [CCBReader loadAsScene:@"MainScene"];
     [[CCDirector sharedDirector]replaceScene:mainScene];
-}
+    }
 
 
 - (void)updateValueDisplay {
@@ -116,12 +119,33 @@
 //used to update status of the nextTile in time
 - (void)step
 {
+    //detect tiles status and update needTile status immediately
     [self updateValueDisplay];
+    
+    //detect high score, if a new score happen, update board status immediately
+    if (highScoreUpdate == true) {
+        [self updateHighscore];
+        highScoreUpdate = false;
+    }
+    
+    
 }
 
 - (void)main {
     CCScene *cover = [CCBReader loadAsScene:@"Cover"];
     [[CCDirector sharedDirector]replaceScene:cover];
+}
+
+
+- (void)reset {
+    NSNumber *highScore;
+    NSInteger new = 0;
+    highScore = [NSNumber numberWithInt:new];
+    
+    [[NSUserDefaults standardUserDefaults]setObject:highScore forKey:@"highscore"];
+    
+    [self updateHighscore];
+    
 }
 
 

@@ -74,7 +74,11 @@ static const NSInteger WIN_TILE = 12;
     self.tilesNum = 6;
     
     continueTemp = false;
-
+    
+    //record old high score
+    NSNumber *oldHighScore = [[NSUserDefaults standardUserDefaults]objectForKey:@"highscore"];
+    
+    self.oldHighScoreInt = [oldHighScore intValue];
 }
 
 - (void) playSoundFXFor:(int) type {
@@ -219,14 +223,14 @@ static const NSInteger WIN_TILE = 12;
 - (void)loose {
     NSNumber *highScore = [[NSUserDefaults standardUserDefaults]objectForKey:@"highscore"];
     if (continueTemp == false) {
-        if (self.score > [highScore intValue]) {
+        if (self.score > self.oldHighScoreInt) {
             [self endGameWithMessage:@"You loose! New Highscore!"];
         }
         else {
             [self endGameWithMessage:@"You loose!"];
         }
     } else {
-        if (self.score > [highScore intValue]) {
+        if (self.score > self.oldHighScoreInt) {
             [self endGameWithMessage:@"New Highscore! But end." ];
         }
         else {
@@ -341,6 +345,10 @@ static const NSInteger WIN_TILE = 12;
                         [self mergeTileAtIndex:currentX y:currentY withTileAtIndex:otherTileX y:otherTileY];
                         movedTilesThisRound = YES;
                         [self playSoundFXFor:1];
+                    }
+                    else {
+                        //set move when two 0 are next to each other
+                        performMove = YES;
                     }
                     
                 } else {
@@ -469,6 +477,20 @@ static const NSInteger WIN_TILE = 12;
     
     CCActionSequence *sequence = [CCActionSequence actionWithArray:@[moveTo, mergeTile, remove]];
     [mergedTile runAction:sequence];
+    
+
+    //update highscore along with running
+    NSNumber *highScore = [[NSUserDefaults standardUserDefaults]objectForKey:@"highscore"];
+    if (self.score > [highScore intValue]) {
+        // new highscore!
+        highScore = [NSNumber numberWithInt:self.score];
+        
+        [[NSUserDefaults standardUserDefaults]setObject:highScore forKey:@"highscore"];
+        [[NSUserDefaults standardUserDefaults]synchronize];
+        highScoreUpdate = true;
+    }
+ 
+    
 }
 
 - (void)moveTile:(Tile *)tile fromIndex:(NSInteger)oldX oldY:(NSInteger)oldY newX:(NSInteger)newX newY:(NSInteger)newY {

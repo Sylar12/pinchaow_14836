@@ -42,7 +42,6 @@
     //add step to update nextTile status
     [self schedule:@selector(step) interval:0.5f];
     
-    self.level = 2;
     
 }
 
@@ -72,6 +71,7 @@
 - (void)newGame {
     CCScene *mainScene = [CCBReader loadAsScene:@"MainScene"];
     [[CCDirector sharedDirector]replaceScene:mainScene];
+    
 }
 
 
